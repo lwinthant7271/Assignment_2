@@ -55,8 +55,8 @@ profit_bySale=(sd['Profit'].sum()/sd['Sales'].sum())*100
 
 col1, col2, col3= st.columns(3)
 col1.metric("**Total Sales**", int(total_sale))
-col2.metric("**Total Profit**", total_profit)
-col3.metric("**% Profit-return**", profit_bySale)
+col2.metric("**Total Profit**", int(total_profit))
+col3.metric("**% Profit-return**", int(profit_bySale))
 st.write(f"During 5 years, our sales value reached to USD {total_sale},which generated profit USD {total_profit}. It means we got {profit_bySale}% as profit for every 1USD sale did.")
 
 st.subheader("**Where we are!**")
@@ -66,9 +66,9 @@ country_count=len(sd['Country'].unique())
 city_count=len(od['City'].unique())  #taken from od not sd
 
 col1, col2, col3= st.columns(3)
-col1.metric("**Regions**", region_count)
-col2.metric("**Countries**", country_count)
-col3.metric("**City**", city_count)
+col1.metric("**Regions**", int(region_count))
+col2.metric("**Countries**", int(country_count))
+col3.metric("**City**", int(city_count))
 st.write(f"In five market territories, our sales reached to  {city_count} cities in {country_count} countries, existed at {region_count} regions around the world.")
 
 with st.expander("See Region list with their sales here"):
@@ -85,9 +85,9 @@ subcat_count=len(sd['Sub-Category'].unique())
 product_count=len(od['ProductName'].unique())  #taken from od not sd
 
 col1, col2, col3= st.columns(3)
-col1.metric("**Product Categories**", category_count)
-col2.metric("**Product Sub-Categories**", subcat_count)
-col3.metric("**Product Items**", product_count)  #taken from od not sd
+col1.metric("**Product Categories**", int(category_count))
+col2.metric("**Product Sub-Categories**", int(subcat_count))
+col3.metric("**Product Items**", int(product_count))  #taken from od not sd
 st.write(f"We can sold out total  {product_count} product items,  under {subcat_count} sub-categories.  Our sale items are listed by {category_count} categories.")
 
 with st.expander("See Product category list with ordered quantities here"):
@@ -108,8 +108,8 @@ customers=image.resize((200,100))
 
 col1, col2, col3= st.columns(3)
 col1.image(customers)
-col2.metric("**Total customers**", customer_headcount)
-col3.metric("**Order Times**", customer_frequency)
+col2.metric("**Total customers**", int(customer_headcount))
+col3.metric("**Order Times**", int(customer_frequency))
 
 st.write(f"We got loyal customers around  {customer_headcount} in four years,  who did  {customer_frequency} order times generating {total_profit} USD profit. Thanks to them!")
 
