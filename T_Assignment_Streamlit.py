@@ -54,7 +54,7 @@ total_profit=sd['Profit'].sum()
 profit_bySale=(sd['Profit'].sum()/sd['Sales'].sum())*100
 
 col1, col2, col3= st.columns(3)
-col1.metric("**Total Sales**", total_sale)
+col1.metric("**Total Sales**", int(total_sale))
 col2.metric("**Total Profit**", total_profit)
 col3.metric("**% Profit-return**", profit_bySale)
 st.write(f"During 5 years, our sales value reached to USD {total_sale},which generated profit USD {total_profit}. It means we got {profit_bySale}% as profit for every 1USD sale did.")
