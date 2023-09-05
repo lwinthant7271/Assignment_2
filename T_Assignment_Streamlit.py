@@ -13,7 +13,7 @@ st.set_page_config(page_title='T Assignment',layout='wide')
 
 # adding image
 from PIL import Image
-image= Image.open("C:/Users/tathant/Documents/_PYTHON_T/_ASSIGNMENT/Sales-Analysis-3.jpg")
+image= Image.open("Sales-Analysis-3.jpg")
 new_image=image.resize((400,200))
 
 col1,col2= st.columns(2)
@@ -25,7 +25,7 @@ with col2:
     st.markdown('**This review is to explore specific market territories to increase profit-return or sales close-out.**')
     st.markdown("**--------------------------------------------------------------------------------------------**")
 #Load the data table csv
-od=pd.read_csv("C:/Users/tathant/Documents/_PYTHON_T//_ASSIGNMENT/T_sales_data.csv")
+od=pd.read_csv("T_sales_data.csv")
 
 # change data type of columns to calculate
 od['Country'] = od['Country'].astype('category')
@@ -102,7 +102,7 @@ st.subheader("**Our customers!**")
 customer_headcount=len(od['CustomerName'].unique())
 customer_frequency=len(od['CustomerName'])
 
-image= Image.open("C:/Users/tathant/Documents/_PYTHON_T/_ASSIGNMENT/customers.jpg")
+image= Image.open("customers.jpg")
 customers=image.resize((200,100))
 
 
